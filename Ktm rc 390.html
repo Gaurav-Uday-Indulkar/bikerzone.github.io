@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <!-- <meta name="viewport"
+    content="width=device-width, initial -scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <title>NINJA H2R</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    color: #f2f5f7;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+body{
+   overflow-x: hidden;
+}
+nav{
+    height: 6rem;
+    width: 100vw;
+    background-color:/* #131418*/#1b414a;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+font-family:Helvetica,Arial,Sans-Serif;
+      font-size: 50px;
+ font-weight: bold;
+      display: inline-block;
+      margin: 0;
+      line-height: 1em;
+      background: linear-gradient(to right,red 20%,white 50%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+.logo img {
+    height: 5rem;
+    width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links2{
+    display: flex;
+    list-style: none; 
+    width: 77vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+.nav-links2 li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: white;
+}
+.nav-links2 li a:hover {
+    color: #61DAFB;
+}
+.nav-links2 li {
+    position: relative;
+}
+.nav-links2 li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+   background-color: /*#61DAFB*/red;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+.nav-links2 li a:hover::before{
+    width: 80%;
+}
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+/*Stying for small screens..*/
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+ .nav-links2{
+        position: fixed;
+        background: /*#131418*/#1b414a;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links2.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    /*Added extrea*/
+/*.nav-links2 li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: white;
+}*/
+
+/*This code is for Navbar toggler*/
+   .nav-links2 li{
+        opacity: 1;
+    }
+    .nav-links2 li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+        opacity: 1;
+        /*text-shadow: 5px 5px 10px white;*/
+    }
+    .nav-links2 li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+  opacity: 1;
+   }
+    .nav-links2 li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+opacity: 1;
+    }
+    .nav-links2 li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+opacity: 1;
+    }
+    .nav-links2 li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+opacity: 1;
+    }
+    .nav-links2 li:nth-child(6){
+      transition: all 0.5s ease 0.9s;
+      opacity: 1;
+    }
+    .nav-links2 li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links2 li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.fa {
+  font-size: 25px;
+  color: #222;
+}
+.checked {
+  color:orange;
+}
+.side {
+  float: left;
+  width: 15%;
+  margin-top: 10px;
+}
+.middle {
+  margin-top: 10px;
+  float: left;
+  width: 70%;
+}
+.right {
+  text-align: right;
+}
+.container {
+  padding: 20px;
+}
+.heading {
+  font-size: 25px;
+  margin-right: 25px;
+}
+.mango {
+  text-align: center;
+}
+a {
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.9);
+
+    </style>
+  </head>
+  <body>
+  <nav>
+        <div class="logo">
+            <!--<img src="logo.svg" alt="Logo Image".>-->
+            <h4>Bikers Zone.</h4>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links2">
+            <li><a href="Imgsliding.html">Home</a></li>
+            <li><a href="Bikes.html">Bikes</a></li>
+            <li><a href="AboutBikerzone.html">About</a></li>
+            <li><a href="#">Services</a></li>
+           <!-- <li><a href="Projects.html">Projects</a></li>
+            <li><a href="Contact.html">Contact Me</a></li>
+            
+            <!--Extra Features Two More buttons add when need-->
+            
+            <!--<li><button class="login-button" href="#">Login</button></li>
+            <li><button class="join-button" href="#">Join</button></li>-->
+        </ul>
+    </nav>
+    <!--programming nav bar toggle..-->
+   <script>
+const hamburger = document.querySelector(".hamburger");
+const navLinks2 = document.querySelector(".nav-links2");
+const links = document.querySelectorAll(".nav-links2 li");
+
+hamburger.addEventListener('click', ()=>{
+   //Animate Links
+    navLinks2.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation.
+    hamburger.classList.toggle("toggle");
+});
+    </script>
+    <!--<script src="nav.js">
+    </script>--><br><br><br><br>
+    <div class="container">
+  <span class="heading" style="color:black"> User Ratings</span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <p style="color:black">4.2 average based 400 reviews.</p></div><br><br>
+   <div class="container">
+      <div class="row"> 
+      <div class="col-md-6">
+        <!--<img class="img-fluid rounded" src="IMG-20210328-WA0033-2.jpg">-->
+    <img class="img-fluid rounded" src="1619332589505.jpg" width="100%"><br>
+    <h2 style="color:black">KTM RC 390</h2><br><br>
+    <b style="color:black">NINJA zx 10R is powered by 1340 cc engine.This 2021 Hayabusa engine generates a power of 190 PS @ 9700 rpm and a torque of 150 Nm @ 7000 rpm. 2021 Suzuki Hayabusa gets Disc brakes in the front and rear. The kerb weight of 2021 Hayabusa is 264 Kg. 2021 Suzuki Hayabusa has Tubeless Tyre and Alloy Wheels.</b>
+        
+      </div>
+      <div class="col-md-6">
+        <h2 style="color:black">KTM RC 390</h2></h2><br><br><br>
+        <b style="color:black">
+2021 KTM RC 390 is powered by 299.00 cc engine.This 2021 KTM RC 390 engine generates a power of 190 PS @ 9700 rpm and a torque of 150 Nm @ 7000 rpm. 2021 Suzuki Hayabusa gets Disc brakes in the front and rear. The kerb weight of 2021 Hayabusa is 264 Kg. 2021 Suzuki Hayabusa has Tubeless Tyre and Alloy Wheels.<br><br><br>
+1 Colors Available <br><br>
+Emission Type: BS6<br><br>
+Engine Displ.: 1340 cc<br><br>
+No Of Cylinders: 4<br><br>
+Max Torque: 150 Nm @ 7000 rpm<br><br>
+Max Power: 190 PS @ 9700 rpm<br><br>
+Top Speed: NA<br><br>
+ABS: Dual Channel<br><br>
+Head Lamp: NA<br><br>
+Tachometer: Analogue<br><br>
+Tyre Make: NA<br><br>
+</b>
+      </div>
+      </div>
+      </div><br><br><br>
+      <div class="mango">
+ <a class="btn btn-success" style="width:50%" href="Bikeform.html" > Booke Now </a>
+ </div><br><br>
+  </body>
+</html>
